@@ -8,6 +8,7 @@ Os scripts de criação das tabelas foram **injetados** na aplicação por meio 
 Caso utilize um banco de dados que não seja o PostgreSQL sera necessario adaptar os scripts de criação de tabelas e de alteração.
 
 #### Criação dos usuários locais.
+``` Os ditos usuários locais são para uso em sua aplicação! Ou seja, sua aplicação irá utilizar estas credenciais para conversar com o servidor de autenticação. ```
 ##### Atenção! Inicialmente já é criado um usuario e uma senha padrão ao inicializar a aplicação.
 
 **Usuário**   | **Senha**
