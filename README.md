@@ -7,14 +7,18 @@ Os scripts de criação das tabelas foram **injetados** na aplicação por meio 
 ``` Você precisara ajustar as configurações do seu bando e tambem incluir o drive de conexão do banco especifico de seu uso. ```
 Caso utilize um banco de dados que não seja o PostgreSQL sera necessario adaptar os scripts de criação de tabelas e de alteração.
 
-## Criação dos usuários locais
+#### Criação dos usuários locais.
+##### Atenção! Inicialmente já é criado um usuario e uma senha padrão ao inicializar a aplicação.
+
+**Usuário**   | **Senha**
+--------- | ------
+teste | 123456
 
 ```bash
 insert into oauth_client_details (client_id, client_secret, "scope", authorized_grant_types, access_token_validity, refresh_token_validity) values ('teste', 'ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413', 'read,write', 'password,authorization_code,refresh_token', 15552000, 15552000);
 
 ou
 
-CREATE EXTENSION pgcrypto; -- como superuser
 insert into user_auth (login, "password", roles, tenant, active) values ('teste', (SELECT ENCODE(DIGEST('123456','sha512'),'hex')), 'admin', 'teste', true);
 
 
